@@ -4,6 +4,8 @@ const express = require("express");
 const app = express();
 const request = require("request");
 
+var PORT = process.env.PORT || 3030;
+
 if (!fs.existsSync(`./Share_File`)) {
   fs.mkdirSync(`./Share_File`);
 };
@@ -58,7 +60,7 @@ app.use(async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT);
+app.listen(PORT);
 
 function getHtml(list, url) {
   var data = [];
